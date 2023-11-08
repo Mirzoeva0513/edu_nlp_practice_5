@@ -53,23 +53,15 @@ def is_prime(n: int) -> bool:
 class Primes:
     def __init__(self, start, end):
         ### начало решения
-        self.current = start
-        self.end = end
+
         ### конец решения
 
     def __next__(self):
         ### начало решения
-        while True:
-            if self.current >= self.end:
-                raise StopIteration
 
-            _current, self.current = self.current, self.current + 1
-
-            if is_prime(_current):
-                return _current
         ### конец решения
 
     def __iter__(self):
         ### начало решения
-        return self
+
         ### конец решения
