@@ -38,14 +38,5 @@ https://ru.wikipedia.org/wiki/Перестановка
 
 def get_permutations(s, n):
     ### начало решения
-    def _recurrent(_s: str, acc: str):
-        for i, ch in enumerate(_s):
-            res = acc + ch
-            if len(res) == n:
-                yield res
-            else:
-                _next_s = _s[:i] + _s[i + 1 :]
-                yield from _recurrent(_next_s, res)
 
-    return _recurrent(s, "")
     ### конец решения
