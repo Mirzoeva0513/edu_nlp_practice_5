@@ -34,13 +34,5 @@ https://ru.wikipedia.org/wiki/Сочетание
 
 def get_combinations(s: str, n: int):
     ### начало решения
-    def _recurrent(_s: str, acc: str):
-        for i, ch in enumerate(_s):
-            res = acc + ch
-            if len(res) <= n:
-                yield res
-            _next_s = _s[:i] + _s[i + 1 :]
-            yield from _recurrent(_next_s, res)
-
-    return _recurrent(s, "")
+   
     ### конец решения
