@@ -32,6 +32,18 @@ https://ru.wikipedia.org/wiki/Перестановка
 - длины 2: {1,2}, {1,3}, {2,1}, {2,3}, {3,1}, {3,2}
 - длины 3: {1,2,3}, {1,3,2}, {2,1,3}, {2,3,1}, {3,1,2}, {3,2,1}
 
+def get_permutations (s, n):
+    if n == 0 or len(s) == 0:
+        return []
+    elif n == 1:
+        return list(s)
+    else:
+        permutations = []
+        for i in range(len(s)):
+            partials = get_permutations(s[:i] + s[i+1:], n-1)
+            for partial in partials:
+                permutations.append(s[i] + partial)
+        return permutations
 
 """
 
