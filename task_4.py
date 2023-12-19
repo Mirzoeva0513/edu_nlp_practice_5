@@ -52,16 +52,41 @@ def is_prime(n: int) -> bool:
 
 class Primes:
     def __init__(self, start, end):
-        ### начало решения
+       def is_prime(n: int) -> bool:
+    n = abs(n)
 
-        ### конец решения
+    if n == 2 or n == 3:
+        return True
 
-    def __next__(self):
-        ### начало решения
+    if n < 2 or n % 2 == 0:
+        return False
 
-        ### конец решения
+    if n < 9:
+        return True
+
+    if n % 3 == 0:
+        return False
+
+    for i in range(5, int(n**0.5) + 1, 6):
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+
+    return True
+
+
+class Primes:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
 
     def __iter__(self):
-        ### начало решения
+        self.current = self.start
+        return self
 
-        ### конец решения
+    def __next__(self):
+        while self.current < self.end:
+            number = self.current
+            self.current += 1
+            if is_prime(number):
+                return number
+        raise StopIteration
