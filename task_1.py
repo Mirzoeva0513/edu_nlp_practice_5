@@ -36,7 +36,12 @@ https://ru.wikipedia.org/wiki/Прямое_произведение
 
 P = [(1,3), (2,3), (1,4), (2,4)]
 """
-
+def get_cartesian_product(a, b):
+    result = []
+    for i in a:
+        for j in b:
+            result.append((i, j))
+    return result
 
 def get_cartesian_product(a, b):
     ### начало решения
